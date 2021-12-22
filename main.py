@@ -38,6 +38,29 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+        if event.type == pygame.KEYDOWN:
+                print(event.key == pygame.K_SPACE)
+                if event.key == pygame.K_SPACE:
+                    rectangle1 = pygame.draw.rect(win,(255,255,255), (25,25,150,150))
+                    pos1_free = True
+                    rectangle2 = pygame.draw.rect(win,(255,255,255), (200,25,150,150))
+                    pos2_free = True
+                    rectangle3 = pygame.draw.rect(win,(255,255,255), (375,25,150,150))
+                    pos3_free = True
+                    rectangle4 = pygame.draw.rect(win,(255,255,255), (25,200,150,150))
+                    pos4_free = True
+                    rectangle5 = pygame.draw.rect(win,(255,255,255), (200,200,150,150))
+                    pos5_free = True
+                    rectangle6 = pygame.draw.rect(win,(255,255,255), (375,200,150,150))
+                    pos6_free = True
+                    rectangle7 = pygame.draw.rect(win,(255,255,255), (25,375,150,150))
+                    pos7_free = True
+                    rectangle8 = pygame.draw.rect(win,(255,255,255), (200,375,150,150))
+                    pos8_free = True
+                    rectangle9 = pygame.draw.rect(win,(255,255,255), (375,375,150,150))
+                    pos9_free = True
+                
+                    player1 = True
         if event.type == pygame.MOUSEBUTTONUP:
             #Get curr mouse position 
             pos = pygame.mouse.get_pos()
@@ -48,8 +71,7 @@ while run:
                 else:
                     pygame.draw.circle(win,(0,255,0),(100,100),50)
                 pos1_free = False
-                player1 = not(player1)
-                    
+                player1 = not(player1)  
             if rectangle2.collidepoint(pos) and pos2_free:
                 if player1:
                     pygame.draw.rect(win,(255,0,0),(225,50,100,100))
@@ -106,7 +128,6 @@ while run:
                     pygame.draw.circle(win,(0,255,0),(450,450),50)
                 pos9_free = False
                 player1 = not(player1)
-    
     pygame.display.update()
 
 pygame.quit()
